@@ -1,29 +1,60 @@
 // Write a function that takes a number as an argument and returns 'even' or 'odd'.
 
-// console.log(evenOrOdd(5)); // Output: 'odd'
-// console.log(evenOrOdd(4)); // Output: 'even'
+function evenOrOdd(number){
+    if(number % 2 === 0){
+        return 'even';
+    }else{
+        return 'odd';
+    }
+}
+
+
+console.log(evenOrOdd(5)); // Output: 'odd'
+
+console.log(evenOrOdd(4)); // Output: 'even'
 
 // ------------------------------------------------------------
 
 // Create a function that checks if the length of a given string is greater than a specified number. Return true or false.
+function isStringLengthGreaterThan(str, no){
 
-// console.log(isStringLengthGreaterThan("Hello, World!", 5)); // Output: true
+    if(str.length > no){
+        return 'true';
+    }else{
+        return 'false';
+    }
 
-// console.log(isStringLengthGreaterThan("Hello", 5)); // Output: false
+
+}
+ console.log(isStringLengthGreaterThan("Hello, World!", 5)); // Output: true
+
+ console.log(isStringLengthGreaterThan("Hello", 5)); // Output: false
 
 // ------------------------------------------------------------
 
 // Implement a function that concatenates two strings and returns the result.
 
-// console.log(concatenateStrings("Hello", "World")); // Output: 'HelloWorld'
+function concatenateStrings(str1, str2){
+
+    let finalString;
+
+    console.log(finalString = str1 + str2);
+
+}
+
+console.log(concatenateStrings("Hello", "World")); // Output: 'HelloWorld'
 
 // ------------------------------------------------------------
 
 // Write a function using interpolation to generate a string that includes the value of a given variable.
 
-// console.log(interpolateVariable("My age is: ", 25)); // Output: 'My age is: 25'
+function interpolateVariable(str, no){
+    console.log(`'${str}''${no}'`);
+}
 
-// console.log(interpolateVariable("My age is: ", 30)); // Output: 'My age is: 25'
+ console.log(interpolateVariable("My age is: ", 25)); // Output: 'My age is: 25'
+
+console.log(interpolateVariable("My age is: ", 30)); // Output: 'My age is: 25'
 
 // ------------------------------------------------------------
 

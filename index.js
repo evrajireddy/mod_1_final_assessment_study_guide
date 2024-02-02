@@ -38,7 +38,7 @@ function concatenateStrings(str1, str2){
 
     let finalString;
 
-    console.log(finalString = str1 + str2);
+    return (finalString = str1 + str2);
 
 }
 
@@ -49,7 +49,7 @@ console.log(concatenateStrings("Hello", "World")); // Output: 'HelloWorld'
 // Write a function using interpolation to generate a string that includes the value of a given variable.
 
 function interpolateVariable(str, no){
-    console.log(`'${str}''${no}'`);
+    return (`'${str}''${no}'`);
 }
 
  console.log(interpolateVariable("My age is: ", 25)); // Output: 'My age is: 25'
@@ -60,79 +60,190 @@ console.log(interpolateVariable("My age is: ", 30)); // Output: 'My age is: 25'
 
 // Develop a function that calculates the sum of numbers in a given range.
 
-// console.log(sumRange(1, 5)); // Output: 15
-// console.log(sumRange(1, 6)); // Output: 21
+function sumRange(a, b){
+    let sum = 0;
+    let i = a;
+    while(i<=b){
+        sum += i;
+        i++;
+
+    }
+
+    return sum;
+}
+
+
+
+ console.log(sumRange(1, 5)); // Output: 15
+ console.log(sumRange(1, 6)); // Output: 21
 
 // ------------------------------------------------------------
 
 // Create a function that sums up all odd numbers in a given range using a loop.
 
-// console.log(sumOddNumbersInRange(1, 10)); // Output: 25
-// console.log(sumOddNumbersInRange(1, 11)); // Output: 36
+function sumOddNumbersInRange(a, b){
+
+    let sum = 0;
+    let i = a;
+
+    while(i<=b){
+        if(i % 2 === 1){
+            sum += i;
+
+        
+        }
+
+        i++;
+    }
+
+    return sum;
+
+
+
+}
+
+console.log(sumOddNumbersInRange(1, 10)); // Output: 25
+console.log(sumOddNumbersInRange(1, 11)); // Output: 36
 
 // ------------------------------------------------------------
 
 // Implement a function that returns the first element of an array.
 
-// console.log(getFirstElement([1, 2, 3])); // Output: 1
-// console.log(getFirstElement([2, 3])); // Output: 2
+function getFirstElement(arr){
+    return arr[0];
+}
+
+ console.log(getFirstElement([1, 2, 3])); // Output: 1
+ console.log(getFirstElement([2, 3])); // Output: 2
 
 // ------------------------------------------------------------
 
 // Write a function to get the last element of an array.
+function getLastElement(arr){
 
-// console.log(getLastElement([1, 2, 3])); // Output: 3
-// console.log(getLastElement([1, 2, 3, 4])); // Output: 4
+    return arr.pop();
+
+}
+console.log(getLastElement([1, 2, 3])); // Output: 3
+console.log(getLastElement([1, 2, 3, 4])); // Output: 4
 
 // ------------------------------------------------------------
 
 // Build a function to replace an element at a specific index in an array and returns the altered array.
 
-// console.log(replaceElementAtIndex([1, 2, 3], 1, 5)); // Output: [1, 5, 3]
-// console.log(replaceElementAtIndex([1, 2, 3], 2, 6)); // Output: [1, 5, 6]
+function replaceElementAtIndex(arr, index, rep){
+
+    arr.splice(index, 1, rep);
+
+    return arr;
+
+}
+
+ console.log(replaceElementAtIndex([1, 2, 3], 1, 5)); // Output: [1, 5, 3]
+ console.log(replaceElementAtIndex([1, 2, 3], 2, 6)); // Output: [1, 5, 6]
+
+ 
 
 // ------------------------------------------------------------
 
 // Develop a function that removes an element from the beginning of an array.
 
-// console.log(removeFirstElement([1, 2, 3])); // Output: [2, 3]
-// console.log(removeFirstElement([0, 1, 2, 3])); // Output: [1, 2, 3]
+function removeFirstElement(arr){
+
+     arr.shift();
+
+     return arr;
+}
+
+console.log(removeFirstElement([1, 2, 3])); // Output: [2, 3]
+console.log(removeFirstElement([0, 1, 2, 3])); // Output: [1, 2, 3]
 
 // ------------------------------------------------------------
 
 // Create a function to remove an element from the end of an array and return the removed element.
 
-// console.log(removeLastElement([1, 2, 3])); // Output: 3
-// console.log(removeLastElement([1, 2, 3, 4])); // Output: 4
+function removeLastElement(arr){
+
+    return arr.pop();
+
+}
+
+ console.log(removeLastElement([1, 2, 3])); // Output: 3
+ console.log(removeLastElement([1, 2, 3, 4])); // Output: 4
 
 // ------------------------------------------------------------
 
 // Implement a function to remove an element at a given index in an array and returns the input array.
 
-// console.log(removeElementAtIndex([1, 2, 3], 1)); // Output: [1, 3]
-// console.log(removeElementAtIndex([1, 2, 3], 2)); // Output: [1, 2]
+function removeElementAtIndex(arr, index){
+
+
+    arr.splice(index, 1);
+
+    return arr;
+
+
+    
+
+
+}
+
+ console.log(removeElementAtIndex([1, 2, 3], 1)); // Output: [1, 3]
+ console.log(removeElementAtIndex([1, 2, 3], 2)); // Output: [1, 2]
 
 // ------------------------------------------------------------
 
 // Write a function that converts all characters in a string to uppercase.
 
-// console.log(toUpperCaseString("hello")); // Output: 'HELLO'
-// console.log(toUpperCaseString("world")); // Output: 'WORLD'
+function toUpperCaseString(str){
+
+    return str.toUpperCase();
+
+    
+
+
+}
+
+console.log(toUpperCaseString("hello")); // Output: 'HELLO'
+console.log(toUpperCaseString("world")); // Output: 'WORLD'
 
 // ------------------------------------------------------------
 
 // Create a function to properly capitalize each word in a string of words.
 
-// console.log(capitalizeWords("hello world")); // Output: 'Hello World'
-// console.log(capitalizeWords("whats up joe?")); // Output: 'Whats Up Joe?'
+function capitalizeWords(str){
+
+
+    
+const words = str.split(" ");
+
+console.log(words);
+
+for (let i = 0; i < words.length; i++) {
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+}
+
+return words.join(' ');
+
+}
+
+ console.log(capitalizeWords("hello world")); // Output: 'Hello World'
+ console.log(capitalizeWords("whats up joe?")); // Output: 'Whats Up Joe?'
 
 // ------------------------------------------------------------
 
 // Develop a function that returns the element at the middle index of an array.
 
-// console.log(getMidIndexElement([1, 2, 3, 4, 5])); // Output: 3
+function getMidIndexElement(arr){
+    
 
-// console.log(getMidIndexElement([1, 2, 3, 4, 5, 6, 7])); // Output: 4
+        return middle = arr[Math.floor((arr.length - 1) / 2)]; 
+
+}
+
+ console.log(getMidIndexElement([1, 2, 3, 4, 5])); // Output: 3
+
+ console.log(getMidIndexElement([1, 2, 3, 4, 5, 6, 7])); // Output: 4
 
 // ------------------------------------------------------------
 

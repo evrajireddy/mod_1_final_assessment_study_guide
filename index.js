@@ -177,15 +177,9 @@ function removeLastElement(arr){
 
 function removeElementAtIndex(arr, index){
 
-
     arr.splice(index, 1);
 
     return arr;
-
-
-    
-
-
 }
 
  console.log(removeElementAtIndex([1, 2, 3], 1)); // Output: [1, 3]
@@ -199,9 +193,6 @@ function toUpperCaseString(str){
 
     return str.toUpperCase();
 
-    
-
-
 }
 
 console.log(toUpperCaseString("hello")); // Output: 'HELLO'
@@ -213,8 +204,6 @@ console.log(toUpperCaseString("world")); // Output: 'WORLD'
 
 function capitalizeWords(str){
 
-
-    
 const words = str.split(" ");
 
 console.log(words);
@@ -237,7 +226,7 @@ return words.join(' ');
 function getMidIndexElement(arr){
     
 
-        return middle = arr[Math.floor((arr.length - 1) / 2)]; 
+ return middle = arr[Math.floor((arr.length - 1) / 2)]; 
 
 }
 
@@ -249,44 +238,119 @@ function getMidIndexElement(arr){
 
 // Implement a function to calculate the sum of all numbers in an array.
 
-// console.log(sumArray([1, 2, 3, 4])); // Output: 10
-// console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+function sumArray(arr){
+
+    let sum = 0;
+
+    for(let i=0; i<arr.length; i++){
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+console.log(sumArray([1, 2, 3, 4])); // Output: 10
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
 
 // ------------------------------------------------------------
 
 // Create a function that returns the sum of all odd or even numbers in an array.
 
-// console.log(sumOddNumbersArray([1, 2, 3, 4])); // Output: 4
-// console.log(sumOddNumbersArray([1, 2, 3, 4, 5])); // Output: 9
+function sumOddNumbersArray(arr){
+    let sum = 0;
+    for(let i=0; i<arr.length; i++){
+
+        if(arr[i] % 2 === 1){
+            sum += arr[i];
+        }
+    }
+
+    return sum;
+}
+
+console.log(sumOddNumbersArray([1, 2, 3, 4])); // Output: 4
+console.log(sumOddNumbersArray([1, 2, 3, 4, 5])); // Output: 9
 
 // ------------------------------------------------------------
 
 // Write a function to find the maximum number in an array using a loop and the accumulator pattern.
+/*
+function findMaxUsingLoop(arr){
+    
 
-// console.log(findMaxUsingLoop([1, 5, 3, 8, 2])); // Output: 8
-// console.log(findMaxUsingLoop([1, 5, 3, 2])); // Output: 5
+    return maxNo = arr.reduce((acc, currentValue) => (currentValue > acc)? currentValue:acc);
+}
+*/
+
+function findMaxUsingLoop(arr){
+    let maxNo;
+
+    for(let i = 0; i<arr.length; i++){
+        if(arr[i+1]>arr[i]){
+
+            maxNo = arr[i+1];
+        }
+    }
+
+    return maxNo;
+}
+
+ console.log(findMaxUsingLoop([1, 5, 3, 8, 2])); // Output: 8
+ console.log(findMaxUsingLoop([1, 5, 3, 2])); // Output: 5
 
 // ------------------------------------------------------------
 
 // Develop a function to find the minimum number in an array using the .reduce method.
+function findMinUsingReduce(arr){
+    
 
-// console.log(findMinUsingReduce([1, 5, 3, 8, 2])); // Output: 1
+    return maxNo = arr.reduce((acc, currentValue) => (currentValue < acc)? currentValue:acc);
+}
 
-// console.log(findMinUsingReduce([5, 3, 8, 2])); // Output: 2
+ console.log(findMinUsingReduce([1, 5, 3, 8, 2])); // Output: 1
+
+ console.log(findMinUsingReduce([5, 3, 8, 2])); // Output: 2
 
 // ------------------------------------------------------------
 
 // Create a function to find the maximum number in an array using Math.max.
 
-// console.log(findMaxUsingMathMax([1, 5, 3, 8, 2])); // Output: 8
-// console.log(findMaxUsingMathMax([1, 5, 19, 8, 2])); // Output: 19
+function findMaxUsingMathMax(arr){
+
+    maxNo = Math.max(...arr);
+
+    return maxNo;
+}
+
+ console.log(findMaxUsingMathMax([1, 5, 3, 8, 2])); // Output: 8
+ console.log(findMaxUsingMathMax([1, 5, 19, 8, 2])); // Output: 19
 
 // ------------------------------------------------------------
 
 // Implement a function to create a new array with all numbers doubled using a for loop and the accumulator pattern.
+  
+/*
+function doubleNumbersUsingLoop(arr) {
+    return arr.map(ele => ele * 2);
+  }
+  */
+  
+  
 
-// console.log(doubleNumbersUsingLoop([1, 2, 3])); // Output: [2, 4, 6]
-// console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
+ 
+  function doubleNumbersUsingLoop(arr) {
+
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+     newArr.push(arr[i]*2);
+    }
+    return newArr;
+   }
+   
+   
+   
+ console.log(doubleNumbersUsingLoop([1, 2, 3])); // Output: [2, 4, 6]
+ console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
 
 // ------------------------------------------------------------
 

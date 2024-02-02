@@ -356,22 +356,48 @@ function doubleNumbersUsingLoop(arr) {
 
 // Write a function to create a new array with all numbers doubled using the .map method.
 
-// console.log(doubleNumbersUsingMap([1, 2, 3])); // Output: [2, 4, 6]
-// console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
+function doubleNumbersUsingMap(arr) {
+    return arr.map(ele => ele * 2);
+  }
+
+console.log(doubleNumbersUsingMap([1, 2, 3])); // Output: [2, 4, 6]
+console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
 
 // ------------------------------------------------------------
 
 // Develop a function to create a new array with only the odd numbers using a for loop and the accumulator pattern.
+/*function oddNumbersUsingLoop(arr){
+    let newArr = [];
+    
+    for(let i = 0; i<arr.length; i++){
 
-// console.log(oddNumbersUsingLoop([1, 2, 3])); // Output: [1, 3]
-// console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
+        if(arr[i] % 2 === 1)
+        newArr.push(arr[i]);
+    }
+
+    return newArr;
+}
+*/
+
+function oddNumbersUsingLoop(arr){
+    let newArr = [];
+    return newArr = arr.filter((ele) => (ele % 2 === 1) ? newArr.push(ele):false)
+}
+ console.log(oddNumbersUsingLoop([1, 2, 3])); // Output: [1, 3]
+ console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 
 // ------------------------------------------------------------
 
 // Create a function to create a new array with only the odd numbers using the .filter method.
 
-// console.log(oddNumbersUsingFilter([1, 2, 3])); // Output: [1, 3]
-// console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
+function oddNumbersUsingFilter(arr){
+    let newArr = [];
+    return newArr = arr.filter((ele) => (ele % 2 === 1) ? newArr.push(ele):false)
+}
+
+
+ console.log(oddNumbersUsingFilter([1, 2, 3])); // Output: [1, 3]
+ console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 
 // ------------------------------------------------------------
 

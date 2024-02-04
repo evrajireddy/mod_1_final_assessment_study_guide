@@ -380,10 +380,10 @@ console.log(doubleNumbersUsingLoop([1, 3, 7, 10])); // Output: [2, 6, 14, 20]
 */
 
 function oddNumbersUsingLoop(arr){
-    let newArr = [];
-    return newArr = arr.filter((ele) => (ele % 2 === 1) ? newArr.push(ele):false)
+    
+    return arr.filter((ele) => (ele % 2 !== 0))
 }
- console.log(oddNumbersUsingLoop([1, 2, 3])); // Output: [1, 3]
+ console.log(oddNumbersUsingLoop([1, 2, 3, 101, 331])); // Output: [1, 3]
  console.log(oddNumbersUsingLoop([2, 3, 4, 5, 6, 7])); // Output: [3, 5 ,7]
 
 // ------------------------------------------------------------
@@ -391,8 +391,8 @@ function oddNumbersUsingLoop(arr){
 // Create a function to create a new array with only the odd numbers using the .filter method.
 
 function oddNumbersUsingFilter(arr){
-    let newArr = [];
-    return newArr = arr.filter((ele) => (ele % 2 === 1) ? newArr.push(ele):false)
+    
+    return arr.filter((ele) => (ele % 2 === 1))
 }
 
 
@@ -403,78 +403,194 @@ function oddNumbersUsingFilter(arr){
 
 // Implement a function to find an element in an array using a for loop and the accumulator pattern. If the element can't be found in the array return an error string
 
-// console.log(findElementUsingLoop([1, 2, 3], 2)); // Output: 2
-// console.log(findElementUsingLoop(["a", "b", "c", "d"], "c")); // Output: "c"
-// console.log(findElementUsingLoop([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
+function findElementUsingLoop(arr, ele){
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] === ele){
+
+            return arr[i];
+
+        }
+    }
+    return 'ERROR';
+
+
+/*
+function findElementUsingLoop(arr, x){
+
+   let newArr = arr.filter((ele) => ele === x);
+    
+
+    if(!newArr.length){
+        return "ERROR"
+    }
+
+
+     return newArr.join('');
+     */
+
+
+}
+
+ console.log(findElementUsingLoop([1, 2, 3], 2)); // Output: 2
+ console.log(findElementUsingLoop(["a", "b", "c", "d"], "c")); // Output: "c"
+ console.log(findElementUsingLoop([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
 
 // ------------------------------------------------------------
 
 // Write a function to find an element in an array using the .find method.
 
-// console.log(findElementUsingLoop(["a", "b", "c", "d"], "c")); // Output: "c"
-// console.log(findElementUsingLoop([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
+function findElement(arr, ele){
+
+    
+
+    const found = arr.find((element) => element === ele) || "ERROR";
+
+    return found;
+    
+}
+
+ console.log(findElement(["a", "b", "c", "d"], "c")); // Output: "c"
+ console.log(findElement([1, 2, 3, 4 ,5], 6)); // Output: "ERROR"
 
 // ------------------------------------------------------------
 
 // Develop a function to set a key in an object to a value if it doesn't exist, and return the object. If the key exists, return the object as is.
+function setKeyValueInObject(obj, x, y){
 
-// console.log(setKeyValueInObject({ key1: 'value1' }, 'key2', 'value2')); 
+    if(obj[x]){
+        return obj;
+    }else{
+        obj[x]=y;
+    }
+
+return obj;
+
+}
+ console.log(setKeyValueInObject({ key1: 'value1' }, 'key2', 'value2')); 
 // Output: { key1: 'value1', key2: 'value2' }
 
-// console.log(setKeyValueInObject({ key1: 'value1' }, 'key1', 'value2')); 
+console.log(setKeyValueInObject({ key1: 'value1' }, 'key1', 'value2')); 
 // Output: { key1: 'value1' }
 
 // ------------------------------------------------------------
 
 // Create a function to return a new array with only unique elements from an array with duplicate elements.
 
-// console.log(uniqueElementsArray([1, 2, 2, 3])); // Output: [1, 2, 3]
-// console.log(uniqueElementsArray([1, 2, 2, 3, 3, 4, 3, 2])); // Output: [1, 2, 3, 4]
+function uniqueElementsArray(arr){
+    
+        const duplicates = [];
+        
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+              duplicates.push(arr[i]);
+            }
+          }
+        }
+        
+        return duplicates;
+      }
+   
+
+   
+
+
+
+
+console.log(uniqueElementsArray([1, 2, 2, 3])); // Output: [1, 2, 3]
+console.log(uniqueElementsArray([1, 2, 2, 3, 3, 4, 3, 2])); // Output: [1, 2, 3, 4]
 
 // ------------------------------------------------------------
 
 // Write a function to return an object with the elements as keys and the count of them as values.
 
-// console.log(elementsCountObject([1, 2, 2, 3])); 
+function elementsCountObject(arr){
+    let obj ={};
+
+    for(let i=0; i<arr.length; i++){
+        
+        if(obj[arr[i]]){
+            obj[arr[i]]++;
+        }else{
+            obj[arr[i]] = 1;
+        }
+    }
+
+    return obj;
+}
+
+ console.log(elementsCountObject([1, 2, 2, 3])); 
 // Output: { '1': 1, '2': 2, '3': 1 }
 
-// console.log(elementsCountObject(["a", "b", "b", "a", "c", "d", "a"])); 
+ console.log(elementsCountObject(["a", "b", "b", "a", "c", "d", "a"])); 
 // Output: { a: 3, b: 2, c: 1, d: 1 }
 
 // ------------------------------------------------------------
 
 // Implement a function to return an array of all the keys in an object.
 
-// console.log(keysArray({ key1: 'value1', key2: 'value2' })); 
+function keysArray(obj){
+
+    const arr= Object.keys(obj);
+
+    return arr;
+}
+
+
+ console.log(keysArray({ key1: 'value1', key2: 'value2' })); 
 // Output: ['key1', 'key2']
+
+
+
 
 // ------------------------------------------------------------
 
 // Develop a function to return an array of all the values in an object.
+function valuesArray(obj){
 
-// console.log(valuesArray({ key1: 'value1', key2: 'value2' })); 
+const arr = Object.values(obj);
+
+return arr;
+
+}
+
+console.log(valuesArray({ key1: 'value1', key2: 'value2' })); 
 // Output: ['value1', 'value2']
 
 // ------------------------------------------------------------
 
 // Write a function to round up a decimal number.
 
-// console.log(roundUpDecimal(3.14)); // Output: 4
-// console.log(roundUpDecimal(5.74)); // Output: 6
+function roundUpDecimal(dec){
+
+    return no = Math.ceil(dec); 
+}
+
+ console.log(roundUpDecimal(3.14)); // Output: 4
+ console.log(roundUpDecimal(5.74)); // Output: 6
 
 // ------------------------------------------------------------
 
 // Implement a function to round down a decimal number.
 
-// console.log(roundDownDecimal(3.14)); // Output: 3
-// console.log(roundDownDecimal(5.74)); // Output: 5
+function roundDownDecimal(dec){
+    return no = Math.floor(dec);
+}
+
+ console.log(roundDownDecimal(3.14)); // Output: 3
+ console.log(roundDownDecimal(5.74)); // Output: 5
 
 // ------------------------------------------------------------
 
 // Develop a function to return the sum of all numbers in an array using the .reduce method.
 
-// console.log(sumArrayReduce([1, 2, 3, 4])); // Output: 10
-// console.log(sumArrayReduce([1, 2, 3, 4, 5])); // Output: 15
+function sumArrayReduce(arr){
+
+    return sum = arr.reduce((acc, currentValue) => acc + currentValue,0);
+}
+
+ console.log(sumArrayReduce([1, 2, 3, 4])); // Output: 10
+ console.log(sumArrayReduce([1, 2, 3, 4, 5])); // Output: 15
 
 // ------------------------------------------------------------
 

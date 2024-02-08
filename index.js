@@ -596,29 +596,70 @@ function sumArrayReduce(arr){
 
 // Create a function to return the product of all numbers in an array using the .reduce method.
 
-// console.log(productArrayReduce([1, 2, 3, 4])); // Output: 24
-// console.log(productArrayReduce([1, 2, 3, 4, 5])); // Output: 120
+function productArrayReduce(arr){
+    
+    return product = arr.reduce((acc, currentValue) => acc * currentValue);
+}
+
+ console.log(productArrayReduce([1, 2, 3, 4])); // Output: 24
+ console.log(productArrayReduce([1, 2, 3, 4, 5])); // Output: 120
 
 // ------------------------------------------------------------
 
 // Implement a function to calculate the average of numbers in an array.
 
-// console.log(averageArray([1, 2, 3, 4])); // Output: 2.5
-// console.log(averageArray([1, 2, 3, 4, 5])); // Output: 3
+function averageArray(arr){
+
+    let sum = 0;
+    let avg;
+
+    for(let i=0; i<arr.length; i++){
+        sum += arr[i]
+    }
+
+  return avg = sum /arr.length;
+
+}
+
+console.log(averageArray([1, 2, 3, 4])); // Output: 2.5
+console.log(averageArray([1, 2, 3, 4, 5])); // Output: 3
 
 // ------------------------------------------------------------
 
 // Write a function to calculate the factorial of a given number.
 
-// console.log(factorial(5)); // Output: 120
-// console.log(factorial(6)); // Output: 720
+function factorial(no){
+    for (let i = no - 1; i >= 1; i--) {
+       product = (no *= i);
+      }
+      return product;
+}
+
+console.log(factorial(5)); // Output: 120
+console.log(factorial(6)); // Output: 720
 
 // ------------------------------------------------------------
 
 // Develop a function to return the reverse of a given string.
+function reverseString(string){
 
-// console.log(reverseString("hello")); // Output: 'olleh'
-// console.log(reverseString("hello world")); // Output: 'dlrow olleh'
+    //return string.split('').reverse().join('');
+
+    let str = '';
+
+    for(let i=string.length-1; i>=0; i--){
+        str += string[i];
+
+
+    }
+
+    return str;
+
+
+}
+
+ console.log(reverseString("hello")); // Output: 'olleh'
+ console.log(reverseString("hello world")); // Output: 'dlrow olleh'
 
 // ------------------------------------------------------------
 
@@ -631,20 +672,52 @@ function sumArrayReduce(arr){
 
 // Write a function to find the longest word in a given string.
 
-// console.log(findLongestWord("The quickest brown fox")); // Output: 'quickest'
-// console.log(findLongestWord("The brown fox")); // Output: 'brown'
+function findLongestWord(string){
+
+    newArr = string.split(' ');
+    console.log(newArr);
+
+    for(let i = 0; i<newArr.length; i++){
+        if(newArr[i+1].length > newArr[i].length){
+            return newArr[i+1];
+        }else{
+            return newArr[i];
+        }
+    }
+
+}
+
+ console.log(findLongestWord("The quickest brown fox")); // Output: 'quickest'
+ console.log(findLongestWord("The brown fox")); // Output: 'brown'
 
 // ------------------------------------------------------------
 
 // Implement a function to count the occurrences of a specific element in an array.
 
-// console.log(countOccurrences([1, 2, 2, 3], 2)); // Output: 2
-// console.log(countOccurrences([1, 2, 2, 3, 4, 5, 3, 3, 3], 3)); // Output: 4
-// console.log(countOccurrences([1, 2, 2, 3, 4, 5, 3, 3, 3], 7)); // Output: 0
+function countOccurrences(arr, ele){
+
+    let count = 0;
+
+    for(let i=0; i<arr.length; i++){
+        
+        if(arr[i] === ele ){
+
+            count++;
+        }
+    }
+return count;
+    
+}
+
+console.log(countOccurrences([1, 2, 2, 3], 2)); // Output: 2
+console.log(countOccurrences([1, 2, 2, 3, 4, 5, 3, 3, 3], 3)); // Output: 4
+console.log(countOccurrences([1, 2, 2, 3, 4, 5, 3, 3, 3], 7)); // Output: 0
+
 
 // ------------------------------------------------------------
 
 // Create a function to check if all elements in an array are of the same type.
+
 
 // console.log(areAllSameType([1, 2, 'three'])); // Output: false
 // console.log(areAllSameType([1, 2, 3])); // Output: true
@@ -653,16 +726,34 @@ function sumArrayReduce(arr){
 
 // Implement a function to find the index of the first occurrence of a given element in an array.
 
-// console.log(findIndexOfElement([1, 2, 3], 2)); // Output: 1
-// console.log(findIndexOfElement([1, 2, 3, 4, 5, 6], 5)); // Output: 4
-// console.log(findIndexOfElement([1, 2, 3, 4, 5, 6, 4], 4)); // Output: 3
+function findIndexOfElement(arr, ele){
+
+    return indexNo = arr.findIndex((element) => element === ele);
+}
+
+ console.log(findIndexOfElement([1, 2, 3], 2)); // Output: 1
+ console.log(findIndexOfElement([1, 2, 3, 4, 5, 5, 6], 5)); // Output: 4
+ console.log(findIndexOfElement([1, 2, 3, 4, 5, 6, 4], 1)); // Output: 3
+ console.log(findIndexOfElement([1, 2, 3, 4, 5, 6, 4], 7)); // Output: -1
+ 
 
 // ------------------------------------------------------------
 
 // Develop a function to reverse the order of elements in an array.
 
-// console.log(reverseArray([1, 2, 3])); // Output: [3, 2, 1]
-// console.log(reverseArray([3, 2, 1])); // Output: [1, 2, 3]
+function reverseArray(arr){
+    let newArr = [];
+    for(let i = arr.length-1; i>=0; i--){
+
+        newArr.push(arr[i]);
+
+    }
+
+    return newArr;
+}
+
+console.log(reverseArray([1, 2, 3])); // Output: [3, 2, 1]
+console.log(reverseArray([3, 2, 1])); // Output: [1, 2, 3]
 
 // ------------------------------------------------------------
 
